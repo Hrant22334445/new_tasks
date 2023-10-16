@@ -1,7 +1,13 @@
 import test from "./test";
+import React from "react";
+import  ReactDOM  from "react-dom/client";
+
+
+
+
 
 test(5);
 
-const root = document.getElementById('root');
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.innerHTML = '<h1>ESIM</h1>'
+root.render(<h1>HELLO</h1>)
