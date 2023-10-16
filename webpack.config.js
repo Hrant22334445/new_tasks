@@ -1,10 +1,17 @@
 const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     entry: path.resolve(__dirname, 'src', 'index.js'),
     output: {
-        filename: 'esim.[contenthash].js',
-        path: path.resolve(__dirname, 'build')
-    }
+        filename: '[name].[contenthash].js',
+        path: path.resolve(__dirname, 'build'),
+        clean: true
+    },
+    plugins: [
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'public', 'index.html')
+        }),
+    ]
 }
